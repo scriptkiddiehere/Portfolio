@@ -3,27 +3,27 @@ import React from "react";
 const Resume = ({ data }) => {
   if (data) {
     var skillmessage = data.skillmessage;
-    var education = data.education.map(function (education) {
+    var postGraduation = data.postGraduation.map(function (postGraduation) {
       return (
-        <div key={education.school}>
-          <h3>{education.school}</h3>
+        <div key={postGraduation.school}>
+          <h3>{postGraduation.school}</h3>
           <p className="info">
-            {education.degree} <span>&bull;</span>
-            <em className="date">{education.graduated}</em>
+            {postGraduation.degree} <span>&bull;</span>
+            <em className="date">{postGraduation.graduated}</em>
           </p>
-          <p>{education.description}</p>
+          <p>{postGraduation.description}</p>
         </div>
       );
     });
-    var work = data.work.map(function (work) {
+    var graduation = data.graduation.map(function (graduation) {
       return (
-        <div key={work.company}>
-          <h3>{work.company}</h3>
+        <div key={graduation.company}>
+          <h3>{graduation.company}</h3>
           <p className="info">
-            {work.title}
-            <span>&bull;</span> <em className="date">{work.years}</em>
+            {graduation.title}
+            <span>&bull;</span> <em className="date">{graduation.years}</em>
           </p>
-          <p>{work.description}</p>
+          <p>{graduation.description}</p>
         </div>
       );
     });
@@ -40,28 +40,28 @@ const Resume = ({ data }) => {
 
   return (
     <section id="resume">
-      <div className="row education">
+      <div className="row postGraduation">
         <div className="three columns header-col">
           <h1>
-            <span>Education</span>
+            <span>post Graduation</span>
           </h1>
         </div>
 
         <div className="nine columns main-col">
           <div className="row item">
-            <div className="twelve columns">{education}</div>
+            <div className="twelve columns">{postGraduation}</div>
           </div>
         </div>
       </div>
 
-      <div className="row work">
+      <div className="row graduation">
         <div className="three columns header-col">
           <h1>
-            <span>Work</span>
+            <span>graduation</span>
           </h1>
         </div>
 
-        <div className="nine columns main-col">{work}</div>
+        <div className="nine columns main-col">{graduation}</div>
       </div>
 
       <div className="row skill">
